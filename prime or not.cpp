@@ -1,17 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main ()
-{  
-    int num, count = 0;
-    cout << "Enter the number to be checked : ";
-    cin >> num;
-    for(int i=2; i < num; i++){
-    if (num % i == 0)
-    count++;
-           }
-if (count > 1)
- 	cout  << " is not prime.";
-else
-    cout << " is prime.";
+
+int main() {
+    int n, i;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    if (n <= 1) {
+        cout << n << " is not a prime number.";
+    } else {
+        for (i = 2; i < n; ++i) {
+            if (n % i == 0) {
+                cout << n << " is not a prime number.";
+                return 0;
+            }
+        }
+        cout << n << " is a prime number.";
+    }
+
     return 0;
 }
+
